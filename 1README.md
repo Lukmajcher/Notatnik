@@ -1,10 +1,10 @@
 # Notatnik version 0.0.3
 
-Project with Qt Notepad
+Project with Qt 
 
 # Open 
 
-Run QT_notepad.exe  
+Run Notatnik.exe  
 
 
 # Tools
