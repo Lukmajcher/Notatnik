@@ -12,7 +12,6 @@
 #include <QtCore/QLocale>
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -67,46 +66,46 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("img/Notepad.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        MainWindow->setWindowIcon(icon);
         MainWindow->setWindowOpacity(1.000000000000000);
         MainWindow->setUnifiedTitleAndToolBarOnMac(true);
         actionNowy = new QAction(MainWindow);
         actionNowy->setObjectName(QString::fromUtf8("actionNowy"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/imgs/img/New.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionNowy->setIcon(icon1);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/imgs/img/New.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNowy->setIcon(icon);
         actionNoweOkno = new QAction(MainWindow);
         actionNoweOkno->setObjectName(QString::fromUtf8("actionNoweOkno"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/imgs/img/Open.ico"), QSize(), QIcon::Normal, QIcon::On);
-        actionNoweOkno->setIcon(icon2);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/imgs/img/Open.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionNoweOkno->setIcon(icon1);
         actionOtworz = new QAction(MainWindow);
         actionOtworz->setObjectName(QString::fromUtf8("actionOtworz"));
-        actionOtworz->setIcon(icon2);
+        actionOtworz->setIcon(icon1);
         actionZapisz = new QAction(MainWindow);
         actionZapisz->setObjectName(QString::fromUtf8("actionZapisz"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/imgs/img/Save.ico"), QSize(), QIcon::Normal, QIcon::On);
-        actionZapisz->setIcon(icon3);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/imgs/img/Save.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionZapisz->setIcon(icon2);
         actionZapiszJako = new QAction(MainWindow);
         actionZapiszJako->setObjectName(QString::fromUtf8("actionZapiszJako"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/imgs/img/SaveAs.ico"), QSize(), QIcon::Normal, QIcon::On);
-        actionZapiszJako->setIcon(icon4);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/imgs/img/SaveAs.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionZapiszJako->setIcon(icon3);
         actionDrukuj = new QAction(MainWindow);
         actionDrukuj->setObjectName(QString::fromUtf8("actionDrukuj"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/imgs/img/Print.ico"), QSize(), QIcon::Normal, QIcon::On);
-        actionDrukuj->setIcon(icon5);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/imgs/img/Print.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionDrukuj->setIcon(icon4);
         actionWyjdz = new QAction(MainWindow);
         actionWyjdz->setObjectName(QString::fromUtf8("actionWyjdz"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/imgs/img/Exit.ico"), QSize(), QIcon::Normal, QIcon::On);
-        actionWyjdz->setIcon(icon6);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/imgs/img/Exit.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionWyjdz->setIcon(icon5);
         actionCofnij = new QAction(MainWindow);
         actionCofnij->setObjectName(QString::fromUtf8("actionCofnij"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/imgs/img/undo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionCofnij->setIcon(icon6);
         actionWytnij = new QAction(MainWindow);
         actionWytnij->setObjectName(QString::fromUtf8("actionWytnij"));
         QIcon icon7;
@@ -124,7 +123,7 @@ public:
         actionWklej->setIcon(icon9);
         actionUsun = new QAction(MainWindow);
         actionUsun->setObjectName(QString::fromUtf8("actionUsun"));
-        actionUsun->setIcon(icon6);
+        actionUsun->setIcon(icon5);
         actionWyszukajWInternecie = new QAction(MainWindow);
         actionWyszukajWInternecie->setObjectName(QString::fromUtf8("actionWyszukajWInternecie"));
         actionZnajdz = new QAction(MainWindow);
@@ -140,6 +139,9 @@ public:
         actionDzisiejszaData->setObjectName(QString::fromUtf8("actionDzisiejszaData"));
         actionPowtorz = new QAction(MainWindow);
         actionPowtorz->setObjectName(QString::fromUtf8("actionPowtorz"));
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8(":/imgs/img/redo.png"), QSize(), QIcon::Normal, QIcon::On);
+        actionPowtorz->setIcon(icon11);
         actionZawijanie_wierszy = new QAction(MainWindow);
         actionZawijanie_wierszy->setObjectName(QString::fromUtf8("actionZawijanie_wierszy"));
         actionZawijanie_wierszy->setCheckable(true);
@@ -148,9 +150,9 @@ public:
         actionCzcionka->setObjectName(QString::fromUtf8("actionCzcionka"));
         actionO_programie_2 = new QAction(MainWindow);
         actionO_programie_2->setObjectName(QString::fromUtf8("actionO_programie_2"));
-        QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/imgs/img/info.png"), QSize(), QIcon::Normal, QIcon::On);
-        actionO_programie_2->setIcon(icon11);
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8(":/imgs/img/info.png"), QSize(), QIcon::Normal, QIcon::On);
+        actionO_programie_2->setIcon(icon12);
         actionKontakt = new QAction(MainWindow);
         actionKontakt->setObjectName(QString::fromUtf8("actionKontakt"));
         centralwidget = new QWidget(MainWindow);
@@ -195,7 +197,6 @@ public:
         menubar->addAction(menu_Format->menuAction());
         menubar->addAction(menuPomoc->menuAction());
         menuPlik->addAction(actionNowy);
-        menuPlik->addAction(actionNoweOkno);
         menuPlik->addAction(actionOtworz);
         menuPlik->addAction(actionZapisz);
         menuPlik->addAction(actionZapiszJako);
@@ -212,9 +213,6 @@ public:
         menuEdycja->addAction(actionUsun);
         menuEdycja->addSeparator();
         menuEdycja->addAction(actionWyszukajWInternecie);
-        menuEdycja->addAction(actionZnajdz);
-        menuEdycja->addAction(actionIdzDo);
-        menuEdycja->addAction(actionZaznaczWszystko);
         menuEdycja->addAction(actionDzisiejszaData);
         menuEdycja->addSeparator();
         menuEdycja->addSeparator();
@@ -226,13 +224,17 @@ public:
         toolBar->addAction(actionOtworz);
         toolBar->addAction(actionZapisz);
         toolBar->addAction(actionZapiszJako);
-        toolBar->addAction(actionDrukuj);
         toolBar->addSeparator();
-        toolBar->addAction(actionWytnij);
+        toolBar->addAction(actionCofnij);
+        toolBar->addAction(actionPowtorz);
+        toolBar->addSeparator();
         toolBar->addAction(actionKopiuj);
         toolBar->addAction(actionWklej);
+        toolBar->addAction(actionWytnij);
         toolBar->addSeparator();
-        toolBar->addAction(actionZnajdz);
+        toolBar->addAction(actionDrukuj);
+        toolBar->addAction(actionO_programie_2);
+        toolBar->addSeparator();
 
         retranslateUi(MainWindow);
 

@@ -8,8 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     // ustawienie widget'u textEdit na całe okno programu
     this->setCentralWidget(ui->textEdit);
-    this->setWindowIcon(QIcon(":/img/Notepad.svg"));
-    //connect(ui->textEdit->document(), &QTextDocument::contentsChanged, this, &MainWindow::documentWasModified);
+    this->setWindowIcon(QIcon(":/imgs/img/Notepad.png"));
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +19,7 @@ MainWindow::~MainWindow()
 // Funkcja tworząca nowy dokument tekstowy
 void MainWindow::on_actionNowy_triggered()
 {
+    // sprawdzenie czy w dokument został zmodyfikowany przed utworzeniem nowego
     if(!ui->textEdit->document()->isModified())
     {
         currentFile.clear();
@@ -134,7 +134,6 @@ void MainWindow::on_actionZapisz_triggered()
     {
         fileName = currentFile;
     }
-    //QString fileName = currentFile;
     QFile file(fileName);
     if(!file.open(QIODevice::WriteOnly | QFile::Text))
     {
@@ -166,31 +165,6 @@ void MainWindow::on_actionDrukuj_triggered()
 void MainWindow::on_actionWyjdz_triggered()
 {
     QApplication::quit();
-    /*
-    QMessageBox msgBox;
-    msgBox.setText("Ten dokument został zmodyfikowany.");
-    msgBox.setInformativeText("Czy chcesz zapisać zmiany?");
-    msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
-    msgBox.setDefaultButton(QMessageBox::Save);
-    int ret = msgBox.exec();
-
-    switch (ret) {
-      case QMessageBox::Save:
-          on_actionZapisz_triggered();
-          QApplication::quit();
-          break;
-      case QMessageBox::Discard:
-          // Don't Save was clicked
-          QApplication::quit();
-          break;
-      case QMessageBox::Cancel:
-          // Cancel was clicked
-          break;
-      default:
-          // should never be reached
-          break;
-    }
-    */
 }
 
 // Funkcja kopiuj zaznaczony element
@@ -226,23 +200,29 @@ void MainWindow::on_actionPowtorz_triggered()
 // Funkcja do wyłączenia programu
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    int result = QMessageBox::information(this ,"Wyłączyć program?" , "Czy chcesz zapisać zmiany?" , QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel );
-    switch (result) {
-      case QMessageBox::Save:
-          on_actionZapisz_triggered();
-          event->accept();
-          break;
-      case QMessageBox::Discard:
-          // Don't Save was clicked
-          event->accept();
-          break;
-      case QMessageBox::Cancel:
-          // Cancel was clicked
-          event->ignore();
-          break;
-      default:
-          // should never be reached
-          break;
+    if(!ui->textEdit->document()->isModified())
+    {
+        event->accept();
+    }else
+    {
+        int result = QMessageBox::information(this ,"Wyłączyć program?" , "Czy chcesz zapisać zmiany?" , QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel );
+        switch (result) {
+          case QMessageBox::Save:
+              on_actionZapisz_triggered();
+              event->accept();
+              break;
+          case QMessageBox::Discard:
+              // Don't Save was clicked
+              event->accept();
+              break;
+          case QMessageBox::Cancel:
+              // Cancel was clicked
+              event->ignore();
+              break;
+          default:
+              // should never be reached
+              break;
+        }
     }
 }
 
@@ -267,22 +247,15 @@ void MainWindow::on_actionCzcionka_triggered()
     else return;
 }
 
-/*
-// Plik był zmodyfikowany
-void MainWindow::documentWasModified()
-{
-    setWindowModified(ui->textEdit->document()->isModified());
-}
-*/
-
-
+// otworzenie strony github autora
 void MainWindow::on_actionKontakt_triggered()
 {
-    QUrl url("https://github.com/Lukmajcher");
+    QUrl url("https://github.com/Lukmajcher/Notatnik");
     QDesktopServices ul;
     ul.openUrl(url);
 }
 
+// Otworzenie strony google w domyślnej przeglądarce
 void MainWindow::on_actionWyszukajWInternecie_triggered()
 {
     QUrl url("https://www.google.pl");
@@ -290,23 +263,7 @@ void MainWindow::on_actionWyszukajWInternecie_triggered()
     ul.openUrl(url);
 }
 
-/* MOŻE PÓŹNIEJ
-void MainWindow::searchString()
-{
-    QString searchStrin = "Jak";
-    QFile file(currentFile);
-    QTextStream in(&file);
-    QString line;
-    do{
-        line = in.readLine();
-        if(!line.contains(searchString, Qt::CaseSensitive))
-        {
-            // Zrob cos
-        }
-    }while(!line.isNull());
-}
-*/
-
+// zawijanie wierszy
 void MainWindow::on_actionZawijanie_wierszy_triggered()
 {
     if(!worldWrap)
@@ -320,10 +277,9 @@ void MainWindow::on_actionZawijanie_wierszy_triggered()
     }
 }
 
-
+// Wstawienie dzisiejszej daty do tekstu
 void MainWindow::on_actionDzisiejszaData_triggered()
 {
     QDateTime datetime = QDateTime::currentDateTime();
     ui->textEdit->append(datetime.toString());
 }
-

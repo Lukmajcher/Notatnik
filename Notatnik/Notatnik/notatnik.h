@@ -57,13 +57,9 @@ private slots:
 
     void on_actionCzcionka_triggered();
 
-    //void documentWasModified();
-
     void on_actionKontakt_triggered();
 
     void on_actionWyszukajWInternecie_triggered();
-
-    //void searchString();
 
     void on_actionZawijanie_wierszy_triggered();
 

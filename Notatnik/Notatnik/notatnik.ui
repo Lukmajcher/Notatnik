@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Notatnik</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>img/Notepad.svg</normaloff>img/Notepad.svg</iconset>
-  </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
@@ -63,7 +59,6 @@
      <string>&amp;Plik</string>
     </property>
     <addaction name="actionNowy"/>
-    <addaction name="actionNoweOkno"/>
     <addaction name="actionOtworz"/>
     <addaction name="actionZapisz"/>
     <addaction name="actionZapiszJako"/>
@@ -85,9 +80,6 @@
     <addaction name="actionUsun"/>
     <addaction name="separator"/>
     <addaction name="actionWyszukajWInternecie"/>
-    <addaction name="actionZnajdz"/>
-    <addaction name="actionIdzDo"/>
-    <addaction name="actionZaznaczWszystko"/>
     <addaction name="actionDzisiejszaData"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
@@ -126,13 +118,17 @@
    <addaction name="actionOtworz"/>
    <addaction name="actionZapisz"/>
    <addaction name="actionZapiszJako"/>
-   <addaction name="actionDrukuj"/>
    <addaction name="separator"/>
-   <addaction name="actionWytnij"/>
+   <addaction name="actionCofnij"/>
+   <addaction name="actionPowtorz"/>
+   <addaction name="separator"/>
    <addaction name="actionKopiuj"/>
    <addaction name="actionWklej"/>
+   <addaction name="actionWytnij"/>
    <addaction name="separator"/>
-   <addaction name="actionZnajdz"/>
+   <addaction name="actionDrukuj"/>
+   <addaction name="actionO_programie_2"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionNowy">
    <property name="icon">
@@ -219,6 +215,10 @@
    </property>
   </action>
   <action name="actionCofnij">
+   <property name="icon">
+    <iconset resource="Zasoby.qrc">
+     <normaloff>:/imgs/img/undo.png</normaloff>:/imgs/img/undo.png</iconset>
+   </property>
    <property name="text">
     <string>Cofnij</string>
    </property>
@@ -305,6 +305,11 @@
    </property>
   </action>
   <action name="actionPowtorz">
+   <property name="icon">
+    <iconset>
+     <normalon>:/imgs/img/redo.png</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>Powtórz</string>
    </property>
