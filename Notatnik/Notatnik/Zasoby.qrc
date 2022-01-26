@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>img/Copy.ico</file>
+        <file>img/Find.ico</file>
+        <file>img/New.ico</file>
+        <file>img/Open.ico</file>
+        <file>img/Paste.ico</file>
+        <file>img/Print.ico</file>
+        <file>img/SaveAs.ico</file>
+        <file>img/Search.ico</file>
+        <file>img/Save.ico</file>
+        <file>img/Cut.ico</file>
+        <file>img/Exit.ico</file>
+        <file>img/Notepad.png</file>
+        <file>img/info.png</file>
+        <file>img/redo.png</file>
+        <file>img/undo.png</file>
+        <file>img/Notepad.svg</file>
+    </qresource>
+</RCC>
